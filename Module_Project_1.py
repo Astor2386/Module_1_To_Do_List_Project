@@ -1,13 +1,15 @@
-#Create empty task dictionary
+#First thing is to create an empty list, which will be used to append to later.
 tasks = []
-#Create initial main menu and options
+#Organize codes into functions
+#Start with a main menu that welocmes users and displays a main menu with all options.
 def main_menu():
     print("\n --Hello, welcome to the Task Menu--")
     print("1. Add task")
     print("2. View tasks")
     print("3. Delete task")
     print("4. Quit")
-    
+    #Begin working option by option
+    #Add task will be simplified with just try, except, finally
 def add_task():
     try: 
         task = input("Enter new task: ")
@@ -16,7 +18,7 @@ def add_task():
         print("Error while adding task.")
     finally:
         print("Task added!")
-    
+    #view task will take on more by adding if , else, for
 def view_task():
     try:
         if not tasks:
@@ -28,7 +30,7 @@ def view_task():
         print("An error occurred while viewing tasks.")
     finally:
         print("View tasks complete.")
-        
+       #delete task will also require more work with if else, along with try,except, finally 
 def delete_task():
     try:
         if not tasks:
@@ -44,7 +46,11 @@ def delete_task():
         print("deleting task failed")
     finally:
         print("Delete task completed.")
+        """majority of time most errors result from 
+        deleting something so 'try' and 'finally' ideal here!"""
         
+# While True so we can begin to execute the commands 
+#Adding in if elif else in between true, except, finally to ensure program runs smoothly
 while True:
     try:
         main_menu()
